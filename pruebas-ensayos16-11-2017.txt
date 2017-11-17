@@ -1,0 +1,24 @@
+
+Pruebas y Resoluciones - 16/11/2017
+
+1- Chef de los dos router TL- WR-740N V.4:
+	Para quemar las imagenes se accede a https://chef.libremesh.org/ y se elige el modelo y la versión del router. Se generan dos archivos imágenes, en nuestro caso:
+	  -(lime-17.06-******factory.bin) para instalar como Firmware desde el entorno web del Tp-link (si es la primera vez) 
+	  -(lime-17.06-******sysupgrade.bin) para actualizar la imagen. 
+		Pasos para actualizar:
+		  -Se debe copiar la imagen con: scp lime-17.06-sysupgrade.bin root@ROUTERIPADDRESS:/tmp/ 
+		  -Conectarse a la interfaz con: ssh root@ROUTERIPADDRESS
+		  -Ingresar al directorio /tmp 
+		  -Instalar con el comando: sysupgrade -n lede-ROUTERMODEL-squashfs-sysupgrade.bin
+
+		
+2- Mesh con los dos router: se comunicaron perfectamente, luego de actualizar el segundo router.
+
+3- Pruebas de alcance. Se utilizó WIFI Analizer con teléfonos móviles para ver las mac de cada router y cuál se estaba conectado, ya que las ssdid son similares "libremesh.org" 
+
+4- Serval Projects: interacción con la mesh y alcances: utilizamos Serval projects para hacer llamadas, los alcances son difíciles de precisar, pero en un cálculo aproximado de una mesh con dos router TP-Link 740N V.4 estableciendo llamadas con Serval Project se alcanza un radio de cobertura de entre 50 y 70 mts con interferencia, es decir sin linea vista y con paredes y árboles entre medio.
+
+5- agregar un 3er nodo
+6- pruebas de alcance y transmision
+7- autonomia energetica de la mesh: paneles solares para alimentar router
+8- ampliacion de los alcances: antenas parabólicas caseras
